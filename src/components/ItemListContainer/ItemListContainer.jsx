@@ -1,23 +1,20 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { Card, CardMedia, CardContent, CardActionArea, Typography } from "@mui/material";
+import img from "../../assets/img/zapatilla1.png"
+import "./ItemListContainer.css"
 
-const CardUSer = ({ img, name, date, description }) => {
+const ItemListContainer = ({ data }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 250 }} className="Card">
       <CardActionArea>
-        <CardMedia component="img" image={img} alt="green iguana" />
+        <CardMedia>
+          <img src={img} alt="zapatilla" width="250" />
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {description}
+            {data.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {date}
+            {data.username}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -25,4 +22,4 @@ const CardUSer = ({ img, name, date, description }) => {
   );
 };
 
-export default CardUSer;
+export default ItemListContainer;
